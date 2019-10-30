@@ -29,7 +29,12 @@ public class BinderPoolActivity extends BaseActivity<ActivityBinderPoolBinding> 
         bindingView.tvBindPool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doWork();
+              new Thread(new Runnable() {
+                  @Override
+                  public void run() {
+                      doWork();
+                  }
+              }).start();
             }
         });
     }

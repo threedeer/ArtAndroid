@@ -6,14 +6,15 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.print.PrinterId;
 import android.util.Log;
+
 
 import com.tt.art.IBinderPool;
 
 import java.util.concurrent.CountDownLatch;
 
 import static com.tt.art.binderpool.BinderPoolService.TAG;
+
 
 /**
  * @author T
@@ -31,7 +32,7 @@ public class BinderPool {
     private CountDownLatch mConnectionBinderPoolCountDownLatch;
 
     private BinderPool(Context context) {
-        mContext = context.getApplicationContext();
+        mContext = context;
         connectBinderPoolService();
     }
 
