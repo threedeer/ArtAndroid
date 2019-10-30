@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.tt.art.base.BaseActivity;
+import com.tt.art.binderpool.BinderPoolActivity;
 import com.tt.art.contentProvider.ProviderActivity;
 import com.tt.art.databinding.ActivityMainBinding;
 import com.tt.art.socket.TCPClientActivity;
@@ -33,6 +34,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                 startActivity(intent);
             }
         });
-
+        bindingView.btnBinderPool.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BinderPoolActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
